@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Надира Мырзагулова — 50 жылдык мааракеге чакыруу</title>
+<meta name="description" content="28-ноябрь 2026, саат 17:00, «Классик» рестораны, Ош шаары">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Надира Мырзагулова — 50 жаш. Мааракеге чакыруу">
+<meta property="og:description" content="28-ноябрь 2026, саат 17:00, «Классик» рестораны, Ош шаары">
+<meta property="og:image" content="https://edik232323.github.io/invitation/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://edik232323.github.io/invitation/">
+<meta name="theme-color" content="#3D0B18">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233D0B18'/%3E%3Ctext x='32' y='43' font-family='Georgia' font-style='italic' font-size='30' fill='%23D9BC7E' text-anchor='middle'%3E50%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="fonts/cormorant-cyrillic-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root{
+  --wine:#4A0F1F;
+  --wine-deep:#2C0711;
+  --garnet:#7A1C33;
+  --gold:#C9A35E;
+  --gold-light:#E4CC92;
+  --ivory:#F6ECE2;
+  --ink:#3A0A16;
+  --serif:"Cormorant", Georgia, "Times New Roman", serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--serif);
+  font-size:21px;line-height:1.55;font-weight:500;
+  color:var(--ivory);
+  background:var(--wine-deep);
+  -webkit-font-smoothing:antialiased;
+  font-variant-numeric:lining-nums;
+}
+body.locked{overflow:hidden}
+button,input,textarea{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold-light);outline-offset:3px;border-radius:4px}
+
+/* ---------- page column ---------- */
+.page{
+  max-width:520px;margin:0 auto;min-height:100vh;
+  background:
+    radial-gradient(120% 60% at 50% 0%, #6A1528 0%, rgba(106,21,40,0) 60%),
+    var(--wine);
+  box-shadow:0 0 80px rgba(0,0,0,.45);
+  overflow:hidden;
+}
+section{padding:72px 32px;text-align:center}
+
+/* ---------- ornament ---------- */
+.horn{fill:none;stroke:var(--gold);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.divider{display:block;width:150px;height:30px;margin:0 auto}
+
+/* ---------- cover ---------- */
+.cover{
+  position:fixed;inset:0;z-index:50;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
+  padding:40px 28px;text-align:center;
+  background:
+    radial-gradient(90% 55% at 50% 40%, #6E1730 0%, var(--wine) 55%, var(--wine-deep) 100%);
+  transition:transform .9s cubic-bezier(.7,0,.2,1), opacity .9s ease;
+}
+.cover.gone{transform:translateY(-100%);opacity:.6;pointer-events:none}
+.seal{width:190px;height:190px}
+.seal .num{font-family:var(--serif);font-style:italic;font-weight:300;font-size:74px;fill:var(--gold-light)}
+.cover-name{font-style:italic;font-weight:400;font-size:34px;line-height:1.1;color:var(--ivory)}
+.cover-ask{font-size:18px;color:var(--gold-light);opacity:.85;line-height:1.4}
+.lang-pick{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn{
+  appearance:none;cursor:pointer;display:inline-block;text-decoration:none;
+  border:1px solid var(--gold);background:transparent;
+  padding:12px 26px;border-radius:999px;
+  font-size:20px;font-weight:600;letter-spacing:.02em;color:var(--gold-light);
+  transition:background .25s,color .25s;
+}
+.btn:hover,.btn:active{background:var(--gold);color:var(--wine-deep)}
+.btn.solid{background:var(--gold);color:var(--wine-deep)}
+.btn.solid:hover{background:var(--gold-light)}
+
+/* ---------- top controls ---------- */
+.controls{
+  position:fixed;top:14px;left:50%;transform:translateX(-50%);
+  width:min(520px,100%);padding:0 14px;z-index:20;
+  display:flex;justify-content:space-between;pointer-events:none;
+}
+.controls>*{pointer-events:auto}
+.music{
+  width:44px;height:44px;border-radius:50%;cursor:pointer;
+  border:1px solid rgba(201,163,94,.6);background:rgba(44,7,17,.7);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  display:grid;place-items:center;
+}
+.music svg{width:20px;height:20px;fill:var(--gold-light)}
+.music .bars{display:none}
+.music.on .note{display:none}
+.music.on .bars{display:block}
+.music.on .bars rect{animation:eq 1s ease-in-out infinite alternate}
+.music.on .bars rect:nth-child(2){animation-delay:-.4s}
+.music.on .bars rect:nth-child(3){animation-delay:-.7s}
+@keyframes eq{from{transform:scaleY(.35)}to{transform:scaleY(1)}}
+.bars rect{transform-origin:center bottom;transform-box:fill-box}
+.lang{
+  display:flex;border:1px solid rgba(201,163,94,.6);border-radius:999px;overflow:hidden;
+  background:rgba(44,7,17,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.lang button{
+  border:0;background:transparent;cursor:pointer;
+  padding:0 14px;height:42px;font-size:16px;font-weight:600;color:var(--gold-light);
+}
+.lang button[aria-pressed="true"]{background:var(--gold);color:var(--wine-deep)}
+
+/* ---------- hero ---------- */
+.hero{padding-top:92px;padding-bottom:40px}
+.ring-wrap{position:relative;width:min(330px,82vw);aspect-ratio:1;margin:0 auto}
+.ring-wrap svg{position:absolute;inset:0;width:100%;height:100%}
+.fifty{
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-style:italic;font-weight:300;font-size:clamp(110px,34vw,150px);line-height:1;
+  color:var(--gold-light);padding-bottom:6%;
+}
+.fifty small{
+  position:absolute;bottom:27%;left:0;right:0;
+  font-style:normal;font-weight:500;font-size:18px;color:var(--gold);letter-spacing:.04em;
+}
+.kicker{margin-top:34px;font-size:20px;color:var(--gold-light)}
+.name{
+  margin-top:6px;
+  font-weight:400;font-style:italic;font-size:clamp(44px,12.5vw,58px);line-height:1.02;
+  color:var(--ivory);
+}
+.name span{display:block}
+
+/* draw-in, the one orchestrated moment */
+.draw path,.draw circle{stroke-dasharray:1;stroke-dashoffset:1}
+.opened .draw path,.opened .draw circle{animation:draw 2.4s cubic-bezier(.4,0,.2,1) forwards}
+.opened .draw .d2{animation-delay:.5s}
+.fade{opacity:0;transform:translateY(8px)}
+.opened .fade{animation:rise 1.2s ease forwards}
+.opened .fade.f1{animation-delay:.9s}
+.opened .fade.f2{animation-delay:1.3s}
+.opened .fade.f3{animation-delay:1.7s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* ---------- invitation text ---------- */
+.intro p{max-width:30ch;margin:22px auto 0;font-size:22px;line-height:1.6}
+.intro p:first-of-type{font-style:italic;font-size:26px;color:var(--gold-light)}
+
+/* ---------- details ---------- */
+.details{padding-top:40px}
+.facts{display:grid;gap:44px;margin-top:34px}
+.fact h2{font-weight:500;font-style:italic;font-size:22px;color:var(--gold);margin-bottom:6px}
+.fact .big{font-size:34px;font-weight:500;line-height:1.15}
+.fact .sub{font-size:21px;opacity:.85}
+.fact .btn{margin-top:18px}
+
+.cal{margin:38px auto 0;max-width:330px}
+.cal-title{font-style:italic;font-size:22px;color:var(--gold-light);margin-bottom:10px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);row-gap:6px;font-size:18px;font-variant-numeric:lining-nums}
+.cal-grid .wd{font-size:15px;color:var(--gold);opacity:.9;padding-bottom:4px}
+.cal-grid span{height:38px;display:grid;place-items:center;opacity:.8}
+.cal-grid .day{position:relative;opacity:1;font-weight:600;color:var(--wine-deep)}
+.cal-grid .day::before{
+  content:"";position:absolute;width:38px;height:38px;border-radius:50%;
+  background:var(--gold-light);z-index:-1;
+}
+.cal-grid .day{z-index:0}
+
+/* ---------- countdown ---------- */
+.count{background:var(--wine-deep);padding:60px 24px}
+.count h2{font-weight:400;font-style:italic;font-size:28px;color:var(--gold-light)}
+.timer{display:flex;justify-content:center;margin-top:24px}
+.timer div{flex:1;max-width:96px;padding:0 6px}
+.timer div+div{border-left:1px solid rgba(201,163,94,.35)}
+.timer b{display:block;font-weight:500;font-size:46px;line-height:1;font-variant-numeric:lining-nums tabular-nums;color:var(--ivory)}
+.timer i{display:block;font-style:normal;font-size:17px;color:var(--gold);margin-top:6px}
+.count .done{font-size:30px;font-style:italic;margin-top:18px;color:var(--ivory)}
+
+/* ---------- RSVP ---------- */
+.rsvp{background:var(--ivory);color:var(--ink);padding:64px 18px}
+.card{
+  border:1px solid var(--gold);outline:1px solid var(--gold);outline-offset:-7px;
+  padding:44px 22px 36px;
+}
+.rsvp h2{font-weight:400;font-style:italic;font-size:40px;line-height:1.1;color:var(--garnet)}
+.rsvp .lead{margin:12px auto 0;max-width:28ch;font-size:20px;line-height:1.45}
+form{margin-top:30px;text-align:left;display:grid;gap:26px}
+label.f{display:block;font-size:19px;font-weight:600;margin-bottom:4px}
+.input{
+  width:100%;border:0;border-bottom:1px solid rgba(122,28,51,.45);background:transparent;
+  padding:8px 2px;font-size:22px;font-weight:500;border-radius:0;
+}
+.input:focus{outline:none;border-bottom-color:var(--garnet);box-shadow:0 1px 0 var(--garnet)}
+textarea.input{resize:vertical;min-height:46px}
+.choice{display:grid;gap:10px}
+.choice input{position:absolute;opacity:0;pointer-events:none}
+.choice label{
+  display:flex;align-items:center;gap:12px;cursor:pointer;
+  border:1px solid rgba(122,28,51,.35);border-radius:14px;padding:12px 16px;
+  font-size:21px;font-weight:500;transition:background .2s,border-color .2s,color .2s;
+}
+.choice label::before{
+  content:"";flex:none;width:20px;height:20px;border-radius:50%;
+  border:1.5px solid var(--garnet);background:transparent;transition:box-shadow .2s,background .2s;
+}
+.choice input:checked+label{background:var(--garnet);border-color:var(--garnet);color:var(--ivory)}
+.choice input:checked+label::before{border-color:var(--gold-light);background:var(--gold-light);box-shadow:inset 0 0 0 4px var(--garnet)}
+.choice input:focus-visible+label{outline:2px solid var(--garnet);outline-offset:3px}
+.stepper{display:flex;align-items:center;gap:18px}
+.stepper button{
+  width:46px;height:46px;border-radius:50%;cursor:pointer;
+  border:1px solid var(--garnet);background:transparent;color:var(--garnet);font-size:26px;line-height:1;
+}
+.stepper button:disabled{opacity:.3;cursor:default}
+.stepper output{min-width:2ch;text-align:center;font-size:34px;font-weight:500;font-variant-numeric:lining-nums}
+.hint{font-size:16px;opacity:.7}
+.guests[hidden]{display:none}
+.submit{
+  width:100%;cursor:pointer;border:0;border-radius:999px;
+  background:var(--garnet);color:var(--ivory);padding:15px 20px;font-size:22px;font-weight:600;
+  transition:background .2s;
+}
+.submit:hover{background:#8E2440}
+.submit:disabled{opacity:.6;cursor:wait}
+.msg{min-height:1.4em;font-size:18px;text-align:center;color:#9B1B30}
+.thanks{text-align:center;padding:10px 0}
+.thanks p{font-size:28px;font-style:italic;color:var(--garnet);line-height:1.25}
+.thanks button{margin-top:18px;background:none;border:0;cursor:pointer;text-decoration:underline;text-underline-offset:4px;font-size:18px;color:var(--ink);opacity:.75}
+
+/* ---------- footer ---------- */
+footer{padding:56px 28px 44px;text-align:center}
+footer .bye{font-style:italic;font-size:34px;color:var(--gold-light);margin-top:18px}
+footer .credit{margin-top:36px;font-size:13px;line-height:1.4;opacity:.5}
+
+@media (min-width:560px){body{font-size:22px}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .draw path,.draw circle{stroke-dashoffset:0}
+  .fade{opacity:1;transform:none}
+}
+</style>
+</head>
+<body class="locked">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- кочкор мүйүз: a stem splitting into two ram-horn curls -->
+    <g id="horn">
+      <path pathLength="1" d="M0 0 V-11 M0 -11 C0 -21 -10 -27 -17 -22 C-23 -17 -19 -9 -13 -11 C-9 -12 -10 -17 -13 -17"/>
+      <path pathLength="1" d="M0 -11 C0 -21 10 -27 17 -22 C23 -17 19 -9 13 -11 C9 -12 10 -17 13 -17"/>
+    </g>
+  </defs>
+</svg>
+
+<!-- cover / language choice -->
+<div class="cover" id="cover" role="dialog" aria-modal="true" aria-labelledby="coverName">
+  <svg class="seal" viewBox="-100 -100 200 200" aria-hidden="true">
+    <circle r="62" class="horn" stroke-width="1"/>
+    <circle r="92" class="horn" stroke-width=".7" stroke-dasharray="1 5"/>
+    <g class="horn" id="sealHorns"></g>
+    <text class="num" y="25" text-anchor="middle">50</text>
+  </svg>
+  <p class="cover-name" id="coverName">Надира<br>Мырзагулова</p>
+  <p class="cover-ask">Чакырууну ачуу үчүн тилди тандаңыз<br>Выберите язык, чтобы открыть приглашение</p>
+  <div class="lang-pick">
+    <button class="btn" data-open="ky">Кыргызча</button>
+    <button class="btn" data-open="ru">Русский</button>
+  </div>
+</div>
+
+<div class="controls">
+  <button class="music" id="musicBtn" aria-label="Музыка" aria-pressed="false">
+    <svg class="note" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5A3.5 3.5 0 1 1 7 14.3V4l12-2v13.5a3.5 3.5 0 1 1-2-3.2V6.4L9 7.8z"/></svg>
+    <svg class="bars" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="3.2" height="15" rx="1.4"/><rect x="10.4" y="3" width="3.2" height="17" rx="1.4"/><rect x="16.8" y="7" width="3.2" height="13" rx="1.4"/></svg>
+  </button>
+  <div class="lang" role="group" aria-label="Тил / Язык">
+    <button data-lang="ky" aria-pressed="true">KG</button>
+    <button data-lang="ru" aria-pressed="false">RU</button>
+  </div>
+</div>
+
+<main class="page" id="page">
+
+  <section class="hero">
+    <div class="ring-wrap">
+      <svg viewBox="-160 -160 320 320" aria-hidden="true">
+        <g class="draw">
+          <circle pathLength="1" r="104" class="horn" stroke-width="1.1"/>
+          <circle pathLength="1" r="150" class="horn d2" stroke-width=".6"/>
+          <g class="horn d2" id="ringHorns"></g>
+        </g>
+      </svg>
+      <div class="fifty" aria-hidden="true">50<small data-t="years"></small></div>
+    </div>
+    <p class="kicker fade f1" data-t="kicker"></p>
+    <h1 class="name fade f2"><span>Надира</span><span>Мырзагулова</span></h1>
+  </section>
+
+  <section class="intro fade f3">
+    <svg class="divider" viewBox="-75 -28 150 30" aria-hidden="true"><use href="#horn" class="horn" transform="translate(0 0)"/><path class="horn" d="M-70 -2 H-14 M14 -2 H70"/></svg>
+    <p data-t="greet"></p>
+    <p data-t="intro"></p>
+  </section>
+
+  <section class="details">
+    <div class="facts">
+      <div class="fact">
+        <h2 data-t="when"></h2>
+        <p class="big" data-t="date"></p>
+        <p class="sub" data-t="time"></p>
+      </div>
+      <div class="fact">
+        <h2 data-t="where"></h2>
+        <p class="big" data-t="place"></p>
+        <p class="sub" data-t="city"></p>
+        <a class="btn" target="_blank" rel="noopener" href="https://2gis.kg/osh/search/%D0%9A%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D0%BA" data-t="map"></a>
+      </div>
+    </div>
+
+    <div class="cal" aria-hidden="true">
+      <p class="cal-title" data-t="month"></p>
+      <div class="cal-grid" id="cal"></div>
+    </div>
+  </section>
+
+  <section class="count" aria-live="off">
+    <h2 data-t="left"></h2>
+    <div class="timer" id="timer">
+      <div><b id="cd-d">0</b><i data-t="u_d"></i></div>
+      <div><b id="cd-h">00</b><i data-t="u_h"></i></div>
+      <div><b id="cd-m">00</b><i data-t="u_m"></i></div>
+      <div><b id="cd-s">00</b><i data-t="u_s"></i></div>
+    </div>
+    <p class="done" id="cdDone" hidden data-t="started"></p>
+  </section>
+
+  <section class="rsvp" id="rsvp">
+    <div class="card">
+      <h2 data-t="r_title"></h2>
+      <p class="lead" data-t="r_lead"></p>
+
+      <form id="form" novalidate>
+        <div>
+          <label class="f" for="name" data-t="r_name"></label>
+          <input class="input" id="name" name="name" autocomplete="name" maxlength="80" required>
+        </div>
+
+        <fieldset style="border:0">
+          <legend class="f" style="font-size:19px;font-weight:600;margin-bottom:8px" data-t="r_q"></legend>
+          <div class="choice">
+            <input type="radio" name="attend" id="a-yes" value="yes"><label for="a-yes" data-t="r_yes"></label>
+            <input type="radio" name="attend" id="a-no" value="no"><label for="a-no" data-t="r_no"></label>
+          </div>
+        </fieldset>
+
+        <div class="guests" id="guestsBox" hidden>
+          <span class="f" style="display:block;font-size:19px;font-weight:600" id="gLabel" data-t="r_guests"></span>
+          <div class="stepper" role="group" aria-labelledby="gLabel">
+            <button type="button" id="gMinus" aria-label="−">−</button>
+            <output id="gCount" aria-live="polite">1</output>
+            <button type="button" id="gPlus" aria-label="+">+</button>
+          </div>
+          <p class="hint" data-t="r_hint"></p>
+        </div>
+
+        <div>
+          <label class="f" for="comment" data-t="r_comment"></label>
+          <textarea class="input" id="comment" name="comment" rows="2" maxlength="500"></textarea>
+        </div>
+
+        <button class="submit" type="submit" id="send" data-t="r_send"></button>
+        <p class="msg" id="msg" role="alert"></p>
+      </form>
+
+      <div class="thanks" id="thanks" hidden>
+        <p data-t="r_ok"></p>
+        <button type="button" id="again" data-t="r_again"></button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <svg class="divider" viewBox="-75 -28 150 30" aria-hidden="true"><use href="#horn" class="horn"/><path class="horn" d="M-70 -2 H-14 M14 -2 H70"/></svg>
+    <p class="bye" data-t="bye"></p>
+    <p class="credit">Ф. Шопен, Ноктюрн ми-бемоль мажор, соч. 9 № 2. Аткаруучу / исп. Martha Goldstein, CC BY-SA 2.0, Wikimedia Commons</p>
+  </footer>
+</main>
+
+<audio id="audio" loop preload="none"
+  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/5/5c/Frederic_Chopin_-_Nocturne_Eb_major_Opus_9%2C_number_2.ogg/Frederic_Chopin_-_Nocturne_Eb_major_Opus_9%2C_number_2.ogg.mp3"></audio>
+
+<script>
+/* Google Apps Script web-app URL (see README) */
+const RSVP_URL = "";
+const EVENT = new Date("2026-11-28T17:00:00+06:00");
+
+const T = {
+  ky:{
+    years:"жаш",
+    kicker:"мааракеге чакыруу",
+    greet:"Кымбаттуу туугандар жана достор!",
+    intro:"Сиздерди Надира Мырзагулованын 50 жылдык мааракесине кадырлуу коногубуз болууга чын жүрөктөн чакырабыз. Салтанаттуу дасторконубузда күтөбүз!",
+    when:"Качан", date:"28-ноябрь, ишемби", time:"Саат 17:00дө башталат",
+    where:"Кайда", place:"«Классик» рестораны", city:"Ош шаары", map:"2ГИСте ачуу",
+    month:"Ноябрь 2026", wd:["Дш","Шш","Шр","Бш","Жм","Иш","Жк"],
+    left:"Мааракеге чейин калды", u_d:"күн", u_h:"саат", u_m:"мүнөт", u_s:"секунд", started:"Майрам башталды!",
+    r_title:"Келе аласызбы?", r_lead:"Баарын туура даярдашыбыз үчүн жообуңузду жөнөтүп коюңуз",
+    r_name:"Аты-жөнүңүз", r_q:"Мааракеге келе аласызбы?", r_yes:"Албетте, келем", r_no:"Тилекке каршы, келе албайм",
+    r_guests:"Канча киши болосуздар?", r_hint:"Өзүңүздү кошо эсептеңиз",
+    r_comment:"Каалоо-тилек (милдеттүү эмес)", r_send:"Жоопту жөнөтүү", r_sending:"Жөнөтүлүүдө…",
+    r_ok:"Рахмат! Жообуңуз жөнөтүлдү.", r_again:"Жоопту өзгөртүү",
+    e_name:"Аты-жөнүңүздү жазыңыз", e_choice:"Келе аласызбы — тандаңыз",
+    e_net:"Жөнөтүлгөн жок. Интернетти текшерип, кайра басыңыз.", e_cfg:"Анкета азырынча иштебейт.",
+    bye:"Сиздерди күтөбүз!",
+    title:"Надира Мырзагулова — 50 жылдык мааракеге чакыруу"
+  },
+  ru:{
+    years:"лет",
+    kicker:"приглашение на юбилей",
+    greet:"Дорогие родные и друзья!",
+    intro:"От всего сердца приглашаем вас на 50-летний юбилей Надиры Мырзагуловой. Будем счастливы видеть вас за праздничным дастарханом!",
+    when:"Когда", date:"28 ноября, суббота", time:"Начало в 17:00",
+    where:"Где", place:"Ресторан «Классик»", city:"г. Ош", map:"Открыть в 2ГИС",
+    month:"Ноябрь 2026", wd:["Пн","Вт","Ср","Чт","Пт","Сб","Вс"],
+    left:"До праздника осталось", u_d:"дней", u_h:"часов", u_m:"минут", u_s:"секунд", started:"Праздник начался!",
+    r_title:"Сможете прийти?", r_lead:"Ответьте, пожалуйста, чтобы мы всё подготовили",
+    r_name:"Ваше имя и фамилия", r_q:"Придёте на юбилей?", r_yes:"Да, приду", r_no:"К сожалению, не смогу",
+    r_guests:"Сколько человек вас будет?", r_hint:"Включая вас",
+    r_comment:"Пожелание (необязательно)", r_send:"Отправить ответ", r_sending:"Отправляем…",
+    r_ok:"Спасибо! Ваш ответ отправлен.", r_again:"Изменить ответ",
+    e_name:"Напишите ваше имя", e_choice:"Выберите, придёте ли вы",
+    e_net:"Не отправилось. Проверьте интернет и нажмите ещё раз.", e_cfg:"Анкета пока не подключена.",
+    bye:"Ждём вас!",
+    title:"Надира Мырзагулова — приглашение на юбилей"
+  }
+};
+
+let lang = "ky";
+const $ = s => document.querySelector(s);
+
+/* ornaments: inline copies so the draw-in animation reaches every path */
+const HORN = document.getElementById("horn").innerHTML;
+function placeHorns(el, n, r, scale){
+  let h = "";
+  for(let i=0;i<n;i++){
+    const a = 360/n*i;
+    h += `<g transform="rotate(${a}) translate(0 ${-r}) scale(${scale})">${HORN}</g>`;
+  }
+  el.innerHTML = h;
+}
+placeHorns($("#ringHorns"), 12, 108, 1.15);
+placeHorns($("#sealHorns"), 8, 66, .8);
+
+/* language */
+function setLang(l){
+  lang = l;
+  const t = T[l];
+  document.documentElement.lang = l === "ky" ? "ky" : "ru";
+  document.title = t.title;
+  document.querySelectorAll("[data-t]").forEach(el => { el.textContent = t[el.dataset.t]; });
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === l));
+  buildCal();
+  try{ localStorage.setItem("lang", l); }catch(e){}
+}
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+
+/* calendar: November 2026 starts on Sunday */
+function buildCal(){
+  const wd = T[lang].wd.map(d => `<span class="wd">${d}</span>`).join("");
+  let cells = "<span></span>".repeat(6);
+  for(let d=1; d<=30; d++) cells += d===28 ? `<span class="day">${d}</span>` : `<span>${d}</span>`;
+  $("#cal").innerHTML = wd + cells;
+}
+
+/* music */
+const audio = $("#audio"), mBtn = $("#musicBtn");
+function setMusic(on){
+  if(on){ audio.volume = .55; audio.play().then(()=>mark(true)).catch(()=>mark(false)); }
+  else { audio.pause(); mark(false); }
+}
+function mark(on){ mBtn.classList.toggle("on", on); mBtn.setAttribute("aria-pressed", on); }
+mBtn.addEventListener("click", () => setMusic(audio.paused));
+
+/* cover */
+document.querySelectorAll("[data-open]").forEach(b => b.addEventListener("click", () => {
+  setLang(b.dataset.open);
+  setMusic(true);
+  $("#cover").classList.add("gone");
+  document.body.classList.remove("locked");
+  $("#page").classList.add("opened");
+  setTimeout(() => $("#cover").remove(), 1000);
+}));
+
+/* countdown */
+const pad = n => String(n).padStart(2,"0");
+function tick(){
+  let s = Math.max(0, Math.floor((EVENT - Date.now())/1000));
+  if(s === 0){ $("#timer").hidden = true; $("#cdDone").hidden = false; return; }
+  $("#cd-d").textContent = Math.floor(s/86400); s %= 86400;
+  $("#cd-h").textContent = pad(Math.floor(s/3600)); s %= 3600;
+  $("#cd-m").textContent = pad(Math.floor(s/60));
+  $("#cd-s").textContent = pad(s%60);
+}
+tick(); setInterval(tick, 1000);
+
+/* RSVP */
+const form = $("#form"), msg = $("#msg"), send = $("#send");
+let guests = 1;
+function drawGuests(){
+  $("#gCount").textContent = guests;
+  $("#gMinus").disabled = guests <= 1;
+  $("#gPlus").disabled = guests >= 15;
+}
+$("#gMinus").onclick = () => { guests = Math.max(1, guests-1); drawGuests(); };
+$("#gPlus").onclick  = () => { guests = Math.min(15, guests+1); drawGuests(); };
+drawGuests();
+form.querySelectorAll('[name=attend]').forEach(r => r.addEventListener("change", () => {
+  $("#guestsBox").hidden = form.attend.value !== "yes";
+  msg.textContent = "";
+}));
+
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  const t = T[lang];
+  const name = form.name.value.trim();
+  const attend = form.attend.value;
+  if(!name){ msg.textContent = t.e_name; form.name.focus(); return; }
+  if(!attend){ msg.textContent = t.e_choice; return; }
+  if(!RSVP_URL){ msg.textContent = t.e_cfg; return; }
+  msg.textContent = "";
+  send.disabled = true; send.textContent = t.r_sending;
+  const body = new URLSearchParams({
+    name, attend, guests: attend === "yes" ? guests : 0,
+    comment: form.comment.value.trim(), lang
+  });
+  try{
+    await fetch(RSVP_URL, { method:"POST", mode:"no-cors", body });
+    form.hidden = true; $("#thanks").hidden = false;
+    try{ localStorage.setItem("rsvp", "1"); }catch(_){}
+  }catch(err){
+    msg.textContent = t.e_net;
+  }finally{
+    send.disabled = false; send.textContent = t.r_send;
+  }
+});
+$("#again").onclick = () => { $("#thanks").hidden = true; form.hidden = false; form.name.focus(); };
+
+/* init */
+let saved = null;
+try{ saved = localStorage.getItem("lang"); }catch(e){}
+setLang(saved === "ru" ? "ru" : "ky");
+</script>
+</body>
+</html>
