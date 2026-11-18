@@ -29,12 +29,14 @@ function setup() {
 
   let total = ss.getSheetByName(SHEET_TOTAL);
   if (!total) total = ss.insertSheet(SHEET_TOTAL, 0);
+  // Формулы без разделителей аргументов: работают в любой локали таблицы.
+  const A = `'${SHEET_ANSWERS}'`;
   total.getRange('A1:B4').setValues([
-    ['Всего придёт человек', `=SUMIF('${SHEET_ANSWERS}'!C:C;"Да";'${SHEET_ANSWERS}'!D:D)`],
-    ['Ответили «приду»', `=COUNTIF('${SHEET_ANSWERS}'!C:C;"Да")`],
-    ['Ответили «не смогу»', `=COUNTIF('${SHEET_ANSWERS}'!C:C;"Нет")`],
-    ['Всего ответов', `=COUNTA('${SHEET_ANSWERS}'!B:B)-1`],
-  ].map(r => [r[0], r[1].replace(/;/g, ',')]));
+    ['Всего придёт человек', `=SUMPRODUCT((${A}!C2:C2000="Да")*${A}!D2:D2000)`],
+    ['Ответили «приду»', `=SUMPRODUCT(--(${A}!C2:C2000="Да"))`],
+    ['Ответили «не смогу»', `=SUMPRODUCT(--(${A}!C2:C2000="Нет"))`],
+    ['Всего ответов', `=COUNTA(${A}!B2:B2000)`],
+  ]);
   total.getRange('A1:A4').setFontWeight('bold');
   total.getRange('B1').setFontSize(20).setFontWeight('bold').setFontColor('#7A1C33');
   total.setColumnWidth(1, 220);
